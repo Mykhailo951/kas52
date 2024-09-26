@@ -1,20 +1,6 @@
 from math import atan, log, tan
 
-a = -0.9
-b = -0.4
-h = 0.05
-
-
-
-def fun1(x):
-    return atan(x**3)
-
-
-def fun2(x):
-    return tan(x + log(abs(x)))
-
-def fun3(x):
-    return 1 / tan(x**2)
+a, b, h = -0.9, -0.4, 0.05
 
 def tb(a, b, h):
     x = a
@@ -22,18 +8,16 @@ def tb(a, b, h):
 
     while x <= b:
         if x <= -0.7:
-            y = fun1(x)
+            y = atan(x**3)
         elif -0.7 < x <= -0.6:
-            y = fun2(x)
+            y = tan(x + log(abs(x)))
         else:
-            y = fun3(x)
+            y = 1 / tan(x**2)
 
         res.append((x, y))
         x += h
-
     return res
 
 res = tb(a, b, h)
-
 for x, y in res:
     print(x, y)
