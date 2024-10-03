@@ -3,8 +3,7 @@ from math import atan, log, tan
 a, b, h = -0.9, -0.4, 0.05
 
 def tb(a, b, h):
-    x = a
-    res = []
+    x, res = a, []
 
     while x <= b:
         if x <= -0.7:
@@ -16,6 +15,8 @@ def tb(a, b, h):
 
         res.append((x, y))
         x += h
+        x = round(x, 2)
+        print(x)
     return res
 
 res = tb(a, b, h)
